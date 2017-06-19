@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 
 //! Project version number for Pulley-iOS.
-FOUNDATION_EXPORT double Pulley_iOSVersionNumber;
+FOUNDATION_EXPORT double PulleyVersionNumber;
 
 //! Project version string for Pulley-iOS.
-FOUNDATION_EXPORT const unsigned char Pulley_iOSVersionString[];
+FOUNDATION_EXPORT const unsigned char PulleyVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Pulley_iOS/PublicHeader.h>
-
-

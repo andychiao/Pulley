@@ -94,15 +94,15 @@ public enum PulleyPosition: Int {
 private let kPulleyDefaultCollapsedHeight: CGFloat = 68.0
 private let kPulleyDefaultPartialRevealHeight: CGFloat = 264.0
 
-open class PulleyViewController: UIViewController {
+open class PulleyViewController: UIViewController, UIScrollViewDelegate, PulleyPassthroughScrollViewDelegate {
     
     // Interface Builder
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public weak var primaryContentContainerView: UIView!
+    @IBOutlet public var primaryContentContainerView: UIView!
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public weak var drawerContentContainerView: UIView!
+    @IBOutlet public var drawerContentContainerView: UIView!
     
     // Internal
     fileprivate let primaryContentContainer: UIView = UIView()
@@ -188,6 +188,15 @@ open class PulleyViewController: UIViewController {
     public fileprivate(set) var drawerPosition: PulleyPosition = .collapsed {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    // The visible height of the drawer. Useful for adjusting the display of content in the main content view.
+    public var visibleDrawerHeight: CGFloat {
+        if drawerPosition == .closed {
+            return 0.0
+        } else {
+            return drawerScrollView.bounds.height
         }
     }
     
@@ -279,6 +288,13 @@ open class PulleyViewController: UIViewController {
         }
     }
     
+    /// Whether the drawer's position can be changed by the user. If set to `false`, the only way to move the drawer is programmatically. Defaults to `true`.
+    public var allowsUserDrawerPositionChange: Bool = true {
+        didSet {
+            enforceCanScrollDrawer()
+        }
+    }
+    
     /// The drawer positions supported by the drawer
     fileprivate var supportedDrawerPositions: [PulleyPosition] = PulleyPosition.all {
         didSet {
@@ -307,7 +323,7 @@ open class PulleyViewController: UIViewController {
                 setDrawerPosition(position: lowestDrawerState, animated: false)
             }
             
-            drawerScrollView.isScrollEnabled = supportedDrawerPositions.count > 1
+            enforceCanScrollDrawer()
         }
     }
     
@@ -321,13 +337,13 @@ open class PulleyViewController: UIViewController {
      
      - returns: A newly created Pulley drawer.
      */
-    required public init(contentViewController: UIViewController, drawerViewController: UIViewController) {
+    public init(contentViewController: UIViewController, drawerViewController: UIViewController) {
         super.init(nibName: nil, bundle: nil)
         
-        ({
-            self.primaryContentViewController = contentViewController
-            self.drawerContentViewController = drawerViewController
-        })()
+//        ({
+        self.primaryContentViewController = contentViewController
+        self.drawerContentViewController = drawerViewController
+//        })()
     }
     
     /**
@@ -433,8 +449,8 @@ open class PulleyViewController: UIViewController {
             assert(primaryContentViewController != nil && drawerContentViewController != nil, "Container views must contain an embedded view controller.")
         }
         
+        enforceCanScrollDrawer()
         setDrawerPosition(position: initialDrawerPosition, animated: false)
-        
         scrollViewDidScroll(drawerScrollView)
     }
     
@@ -503,6 +519,15 @@ open class PulleyViewController: UIViewController {
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Private State Updates
+    
+    private func enforceCanScrollDrawer() {
+        guard isViewLoaded else {
+            return
+        }
+        drawerScrollView.isScrollEnabled = allowsUserDrawerPositionChange && supportedDrawerPositions.count > 1
     }
     
     // MARK: Configuration Updates
@@ -723,9 +748,8 @@ open class PulleyViewController: UIViewController {
             return primaryContentViewController
         }
     }
-}
-
-extension PulleyViewController: PulleyPassthroughScrollViewDelegate {
+    
+    // MARK: - PulleyPassthroughScrollViewDelegate
     
     func shouldTouchPassthroughScrollView(scrollView: PulleyPassthroughScrollView, point: CGPoint) -> Bool
     {
@@ -748,9 +772,8 @@ extension PulleyViewController: PulleyPassthroughScrollViewDelegate {
         
         return primaryContentContainer
     }
-}
-
-extension PulleyViewController: UIScrollViewDelegate {
+    
+    // MARK: - UIScrollViewDelegate
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		441DD7301EF7580700AA90C3 /* Pulley.h in Headers */ = {isa = PBXBuildFile; fileRef = 441DD72F1EF7580700AA90C3 /* Pulley.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		441DD7381EF75AD900AA90C3 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441DD7361EF75AD900AA90C3 /* PulleyPassthroughScrollView.swift */; };
-		441DD7391EF75AD900AA90C3 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441DD7371EF75AD900AA90C3 /* PulleyViewController.swift */; };
+		442E98371EF77F5B00DEA361 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E98361EF77F5B00DEA361 /* PulleyViewController.swift */; };
+		442E983A1EF784FC00DEA361 /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E98391EF784FC00DEA361 /* PulleyPassthroughScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,8 @@
 		441DD7261EF757C700AA90C3 /* Pulley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		441DD72F1EF7580700AA90C3 /* Pulley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pulley.h; sourceTree = "<group>"; };
 		441DD7311EF7582D00AA90C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		441DD7361EF75AD900AA90C3 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
-		441DD7371EF75AD900AA90C3 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
+		442E98361EF77F5B00DEA361 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
+		442E98391EF784FC00DEA361 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				441DD72F1EF7580700AA90C3 /* Pulley.h */,
-				441DD7361EF75AD900AA90C3 /* PulleyPassthroughScrollView.swift */,
-				441DD7371EF75AD900AA90C3 /* PulleyViewController.swift */,
+				442E98391EF784FC00DEA361 /* PulleyPassthroughScrollView.swift */,
+				442E98361EF77F5B00DEA361 /* PulleyViewController.swift */,
 				441DD7201EF7572400AA90C3 /* Supporting Files */,
 			);
 			name = Pulley;
@@ -264,8 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				441DD7381EF75AD900AA90C3 /* PulleyPassthroughScrollView.swift in Sources */,
-				441DD7391EF75AD900AA90C3 /* PulleyViewController.swift in Sources */,
+				442E98371EF77F5B00DEA361 /* PulleyViewController.swift in Sources */,
+				442E983A1EF784FC00DEA361 /* PulleyPassthroughScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +276,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 441DD7011EF756F500AA90C3 /* Debug.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.52inc.Pulley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
@@ -286,7 +286,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 441DD7031EF756F500AA90C3 /* Release.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.52inc.Pulley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
@@ -297,6 +297,7 @@
 			baseConfigurationReference = 441DD70C1EF756F500AA90C3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -363,6 +364,7 @@
 			baseConfigurationReference = 441DD70C1EF756F500AA90C3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -421,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 441DD7041EF756F500AA90C3 /* Test.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.52inc.Pulley.$(PRODUCT_NAME:rfc1034identifier)-test";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
@@ -432,6 +434,7 @@
 			baseConfigurationReference = 441DD70C1EF756F500AA90C3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -497,7 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 441DD7021EF756F500AA90C3 /* Profile.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.52inc.Pulley.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
@@ -508,6 +511,7 @@
 			baseConfigurationReference = 441DD70C1EF756F500AA90C3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
