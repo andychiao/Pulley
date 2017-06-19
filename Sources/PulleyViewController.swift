@@ -99,10 +99,10 @@ open class PulleyViewController: UIViewController {
     // Interface Builder
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public var primaryContentContainerView: UIView!
+    @IBOutlet public weak var primaryContentContainerView: UIView!
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public var drawerContentContainerView: UIView!
+    @IBOutlet public weak var drawerContentContainerView: UIView!
     
     // Internal
     fileprivate let primaryContentContainer: UIView = UIView()

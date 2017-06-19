@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "355DBF121E40EA4300671CDD"
+               BlueprintIdentifier = "441DD7251EF757C700AA90C3"
                BuildableName = "Pulley.framework"
-               BlueprintName = "Pulley"
+               BlueprintName = "Pulley-iOS"
                ReferencedContainer = "container:Pulley.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "355DBF121E40EA4300671CDD"
+            BlueprintIdentifier = "441DD7251EF757C700AA90C3"
             BuildableName = "Pulley.framework"
-            BlueprintName = "Pulley"
+            BlueprintName = "Pulley-iOS"
             ReferencedContainer = "container:Pulley.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "355DBF121E40EA4300671CDD"
+            BlueprintIdentifier = "441DD7251EF757C700AA90C3"
             BuildableName = "Pulley.framework"
-            BlueprintName = "Pulley"
+            BlueprintName = "Pulley-iOS"
             ReferencedContainer = "container:Pulley.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

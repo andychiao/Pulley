@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Pulley.xcodeproj">
+      location = "container:Pulley.xcodeproj">
    </FileRef>
 </Workspace>
